@@ -12,10 +12,13 @@ namespace TinyMapperShowCase
     {
         static void Main(string[] args)
         {
-            /// reslove models
+            /// simple reslove models
+            
             MapperConfig.SimpleResolveModels();
 
             /// simple version
+            
+            // prepare test data
             var targetWriter = new TWriter
             {
                 ID = 1,
@@ -24,14 +27,40 @@ namespace TinyMapperShowCase
                 Pays = "MAROC",
                 Age = 25
             };
+
+            /// mapping t => s
+
             var sourceWriter = TinyMapper.Map<SWriter>(targetWriter);
-            sourceWriter.FirstName = "OUMAYMA";
-            sourceWriter.LastName = "OUMAYMA";
-            sourceWriter.Age = 22;
+            sourceWriter.FirstName = "CHARAF";
+            sourceWriter.LastName = "KHAMLICHI";
+
+            /// mapping s => t -- onr config for the 2, nice clean and cool
+
             var NewTargetWriter = TinyMapper.Map<TWriter>(sourceWriter);
 
-            /// complex version
+
+            /// complex resolve models
             
+            MapperConfig.ComplexResolveModels();
+
+            /// complex version
+            targetWriter.TBooks = new List<TBook>();
+            targetWriter.TBooks.Add(new TBook {
+                    ID = 1,
+                    WriterID = 1,
+                    Title = "is its going to shut down dors ?",
+                    PublishDate = DateTime.Now
+            });
+
+            /// mapping C : t => s
+
+            var complexSourceWriter = TinyMapper.Map<SWriter>(targetWriter);
+            complexSourceWriter.FirstName = "CHARAF";
+            complexSourceWriter.LastName = "KHAMLICHI";
+
+            /// mapping C : s => t
+
+            var NewCmmplexTargetWriter = TinyMapper.Map<TWriter>(sourceWriter);
         }
     }
 }

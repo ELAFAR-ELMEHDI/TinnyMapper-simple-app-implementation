@@ -34,7 +34,7 @@ namespace TinyMapperShowCase
             sourceWriter.FirstName = "CHARAF";
             sourceWriter.LastName = "KHAMLICHI";
 
-            /// mapping s => t -- onr config for the 2, nice clean and cool
+            /// mapping s => t -- onr config for the 2, nice clean and cool.
 
             var NewTargetWriter = TinyMapper.Map<TWriter>(sourceWriter);
 

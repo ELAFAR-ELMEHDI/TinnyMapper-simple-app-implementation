@@ -48,7 +48,7 @@ namespace TinyMapperShowCase
             targetWriter.TBooks.Add(new TBook {
                     ID = 1,
                     WriterID = 1,
-                    Title = "is its going to shut down dors ?",
+                    Title = "c#?",
                     PublishDate = DateTime.Now
             });
 

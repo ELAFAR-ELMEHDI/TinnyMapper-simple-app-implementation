@@ -1,2 +1,2 @@
-# ITSMapperShowCase
-ITS object to object tinyMapper show case is a console app that contain an implementation of tinyMapper. 
+# TinnyMapper-simple-app-implementation
+this is a simple console that containe an implementation of tinyMapper. 
